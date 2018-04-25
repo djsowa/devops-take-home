@@ -1,0 +1,32 @@
+version: '2'
+services:
+
+
+
+  ##################################################
+  ##                 Rancher                      ##
+  ##################################################
+  rancher-eco:
+    build: ./Rancher
+    restart: always
+    volumes:
+      - /datadrive/rancher:/var/lib/rancher
+
+  ##################################################
+  ##                 Nginx                        ##
+  ##################################################
+  managment-nginx:
+    build: ./ManagmentNginx
+    ports:
+      - 8080:8080 #Rancher Server
+      - 8081:8081 #DockerHub Server   
+    restart: always
+    volumes:
+      - /etc/letsencrypt/live/rancher-eco.westeurope.cloudapp.azure.com/fullchain.pem:/certs/fullchain.pem
+      - /etc/letsencrypt/live/rancher-eco.westeurope.cloudapp.azure.com/privkey.pem:/certs/privkey.pem
+
+  docker-registry:
+    build: ./DockerHub
+    restart: always
+    volumes:
+      - /datadrive/docker-registry:/eco-registry
