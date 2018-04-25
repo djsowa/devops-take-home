@@ -23,9 +23,9 @@ export RANCHER_ENVIRONMENT="dev"
 echo "Env:"$RANCHER_ENVIRONMENT
 echo "RancherServer:"$RANCHER_URL
 
-docker build . -t eco-platform-release
+sudo docker build . -t eco-platform-release
 
-docker run -e RANCHER_URL \
+sudo docker run -e RANCHER_URL \
            -e RANCHER_ACCESS_KEY \
            -e RANCHER_SECRET_KEY \
            -e RANCHER_ENVIRONMENT --rm eco-platform-release
