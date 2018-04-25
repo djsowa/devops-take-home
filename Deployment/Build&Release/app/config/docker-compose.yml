@@ -20,6 +20,9 @@ services:
       - 80:80
       - 443:443
     restart: always
+    volumes:
+      - /etc/letsencrypt/live/endpoint-eco.westeurope.cloudapp.azure.com/fullchain.pem:/certs/fullchain.pem
+      - /etc/letsencrypt/live/endpoint-eco.westeurope.cloudapp.azure.com/privkey.pem:/certs/privkey.pem
     labels:
       io.rancher.container.pull_image: always 
 
