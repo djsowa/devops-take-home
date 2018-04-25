@@ -8,4 +8,4 @@ RUN apt-get install apache2-utils -y
 
 COPY ./app/default.conf /etc/nginx/conf.d/default.conf
 
-RUN htpasswd -b -c /etc/nginx/.htpasswd eco-vadis "eco-P2$$word-va32d1is"
+RUN htpasswd -b -c /etc/nginx/.htpasswd eco-vadis ecoV0984ruck34uv
