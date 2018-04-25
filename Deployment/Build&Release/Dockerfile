@@ -8,4 +8,6 @@ COPY ./app /app
 RUN chmod +x /app/Release.sh
 RUN chmod +x /app/binaries/rancher
 
-ENTRYPOINT /app/Release.sh
+RUN echo $RANCHER_URL
+
+ENTRYPOINT ["/bin/bash", "/app/Release.sh"]
