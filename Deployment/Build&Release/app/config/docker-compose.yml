@@ -33,5 +33,9 @@ services:
   one-mssqlserver:
     image: rancher-eco.westeurope.cloudapp.azure.com:8081/eco-vadis/platform-database    
     restart: always
+    environment:        
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=5g6h7J8k9l
+      - MSSQL_PID=Express
     labels:
       io.rancher.container.pull_image: always     
