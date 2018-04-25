@@ -1,0 +1,40 @@
+version: '2'
+services:  
+
+  ##################################################
+  ##                  BACKEND                     ##
+  ##################################################
+  
+  backend-platform:
+    build:
+      context: .
+      dockerfile: Backend.Dockerfile     
+    image: rancher-eco.westeurope.cloudapp.azure.com:8081/eco-vadis/platform-backend
+
+  ##################################################
+  ##                  FRONTEND                    ##
+  ##################################################
+  
+  frontend-platform:
+    build:
+      context: .
+      dockerfile: Frontend.Dockerfile     
+    image: rancher-eco.westeurope.cloudapp.azure.com:8081/eco-vadis/platform-frontend
+
+  ##################################################
+  ##                  DATABASE                    ##
+  ##################################################
+
+  one-mssqlserver:
+    build: 
+      context: .
+      dockerfile: Database.Dockerfile
+    image: rancher-eco.westeurope.cloudapp.azure.com:8081/eco-vadis/platform-database
+
+  ##################################################
+  ##                  ENDPOINT                    ##
+  ##################################################
+  
+  endpoint-platform:
+    build: ./src/endpoint
+    image: rancher-eco.westeurope.cloudapp.azure.com:8081/eco-vadis/platform-endpoint

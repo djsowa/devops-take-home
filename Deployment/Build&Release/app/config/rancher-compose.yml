@@ -1,0 +1,17 @@
+version: '2'
+services:
+
+  webapi-backend:
+    image: rancher-eco.westeurope.cloudapp.azure.com:8081/eco-vadis/platform-backend    
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+    labels:
+      io.rancher.container.pull_image: always
+
+  frontend:
+    image: rancher-eco.westeurope.cloudapp.azure.com:8081/eco-vadis/platform-frontend
+    ports:
+      - 8085:8085
+    restart: always
+    labels:
+      io.rancher.container.pull_image: always

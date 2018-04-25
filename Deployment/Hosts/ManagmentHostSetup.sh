@@ -21,10 +21,10 @@ sudo apt-get update -y
 
 sudo apt-get install docker-ce=17.09.1~ce-0~ubuntu -y
 
-sudo apt-get install software-properties-common -y
-sudo add-apt-repository ppa:certbot/certbot -y
-sudo apt-get update -y
-sudo apt-get install certbot -y
+# sudo apt-get install software-properties-common -y
+# sudo add-apt-repository ppa:certbot/certbot -y
+# sudo apt-get update -y
+# sudo apt-get install certbot -y
 
 sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 
