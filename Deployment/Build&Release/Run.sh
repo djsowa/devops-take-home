@@ -11,16 +11,11 @@ sudo docker-compose -f platform-docker-compose.yml build --pull
 sudo docker-compose -f platform-docker-compose.yml push 
 
 
-echo "Env:"$RANCHER_ENVIRONMENT
-echo "RancherServer:"$RANCHER_URL
-
 cd "./Deployment/Build&Release"
 
 sudo docker build . -t eco-platform-release
 
-
 ##### PLEASE GENERATE ACCESS TOKEN via Rancher and put here to have acces rigth to rancher.
-
 sudo docker run -e RANCHER_URL="https://rancher-eco.westeurope.cloudapp.azure.com:8080/" \
                 -e RANCHER_ACCESS_KEY="" \
                 -e RANCHER_SECRET_KEY="" \
