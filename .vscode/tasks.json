@@ -10,15 +10,6 @@
                 "${workspaceFolder}/src/backend/app/devops-app-api.csproj"
             ],
             "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "Start FrontEnd",
-            "command": "xdg-open",
-            "type": "process",
-            "args": [
-                "file://${workspaceFolder}/src/frontend/index.html"
-            ],
-            "problemMatcher": []
         }
     ]
 }
