@@ -1,1 +1,0 @@
-FROM rancher/server:stable
